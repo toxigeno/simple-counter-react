@@ -9,12 +9,12 @@ const Counter = props => {
 				<div>
 					<i className="far fa-clock"></i>
 				</div>
-				<div>{props.digit6 % 10}</div>
-				<div>{props.digit5 % 10}</div>
-				<div>{props.digit4 % 10}</div>
-				<div>{props.digit3 % 10}</div>
-				<div>{props.digit2 % 10}</div>
-				<div>{props.digit1 % 10}</div>
+				<div>{props.dg6 % 10}</div>
+				<div>{props.dg5 % 10}</div>
+				<div>{props.dg4 % 10}</div>
+				<div>{props.dg3 % 10}</div>
+				<div>{props.dg2 % 10}</div>
+				<div>{props.dg1 % 10}</div>
 			</div>
 		</div>
 	);
@@ -31,12 +31,12 @@ Counter.propTypes = {
 
 let SecondsCounter = 0;
 setInterval(function() {
-	digit1 = math.floor(SecondsCounter);
-	digit2 = math.floor(SecondsCounter / 10);
-	digit3 = math.floor(SecondsCounter / 100);
-	digit4 = math.floor(SecondsCounter / 1000);
-	digit5 = math.floor(SecondsCounter / 10000);
-	digit6 = math.floor(SecondsCounter / 100000);
+	digit1 = Math.floor(SecondsCounter);
+	digit2 = Math.floor(SecondsCounter / 10);
+	digit3 = Math.floor(SecondsCounter / 100);
+	digit4 = Math.floor(SecondsCounter / 1000);
+	digit5 = Math.floor(SecondsCounter / 10000);
+	digit6 = Math.floor(SecondsCounter / 100000);
 	SecondsCounter++;
 	ReactDOM.render(
 		<Counter
@@ -49,4 +49,5 @@ setInterval(function() {
 		/>
 	);
 }, 1000);
+
 export default Counter;
