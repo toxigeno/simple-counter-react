@@ -31,12 +31,12 @@ Counter.propTypes = {
 
 let SecondsCounter = 0;
 setInterval(function() {
-	digit1 = Math.floor(SecondsCounter);
-	digit2 = Math.floor(SecondsCounter / 10);
-	digit3 = Math.floor(SecondsCounter / 100);
-	digit4 = Math.floor(SecondsCounter / 1000);
-	digit5 = Math.floor(SecondsCounter / 10000);
-	digit6 = Math.floor(SecondsCounter / 100000);
+	const digit1 = Math.floor(SecondsCounter);
+	const digit2 = Math.floor(SecondsCounter / 10);
+	const digit3 = Math.floor(SecondsCounter / 100);
+	const digit4 = Math.floor(SecondsCounter / 1000);
+	const digit5 = Math.floor(SecondsCounter / 10000);
+	const digit6 = Math.floor(SecondsCounter / 100000);
 	SecondsCounter++;
 	ReactDOM.render(
 		<Counter
@@ -46,7 +46,8 @@ setInterval(function() {
 			dg4={digit4}
 			dg5={digit5}
 			dg6={digit6}
-		/>
+		/>,
+		document.querySelector("#app")
 	);
 }, 1000);
 
