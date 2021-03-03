@@ -5,38 +5,48 @@ import PropTypes from "prop-types";
 const Counter = props => {
 	return (
 		<div className="container">
-			<div className="counter-box mx-auto">
-				<div className="display-3 d-flex bg-dark text-white">
-					<div className="clock-icon">
-						<i className="far fa-clock"></i>
-					</div>
-					<div>{props.twilight % 10}</div>
-					<div>{props.hours % 10}</div>
-					<div>{props.minutes % 10}</div>
-					<div className="seconds">{props.seconds % 10}</div>
+			<div className="counter-box p-2 display-2 d-flex justify-content-center text-white fw-bolder">
+				<div>
+					<i className="far fa-clock"></i>
 				</div>
+				<div>{props.digit6 % 10}</div>
+				<div>{props.digit5 % 10}</div>
+				<div>{props.digit4 % 10}</div>
+				<div>{props.digit3 % 10}</div>
+				<div>{props.digit2 % 10}</div>
+				<div>{props.digit1 % 10}</div>
 			</div>
 		</div>
 	);
 };
 
 Counter.propTypes = {
-	twilight: PropTypes.number,
-	hours: PropTypes.number,
-	minutes: PropTypes.number,
-	seconds: PropTypes.number
+	dg1: PropTypes.number,
+	dg2: PropTypes.number,
+	dg3: PropTypes.number,
+	dg4: PropTypes.number,
+	dg5: PropTypes.number,
+	dg6: PropTypes.number
 };
 
-let begining = 0;
+let SecondsCounter = 0;
 setInterval(function() {
-	const twl = Math.floor(begining / 1000);
-	const hrs = Math.floor(begining / 100);
-	const min = Math.floor(begining / 10);
-	const sec = Math.floor(begining);
-	begining++;
+	digit1 = math.floor(SecondsCounter);
+	digit2 = math.floor(SecondsCounter / 10);
+	digit3 = math.floor(SecondsCounter / 100);
+	digit4 = math.floor(SecondsCounter / 1000);
+	digit5 = math.floor(SecondsCounter / 10000);
+	digit6 = math.floor(SecondsCounter / 100000);
+	SecondsCounter++;
 	ReactDOM.render(
-		<Counter seconds={sec} minutes={min} hours={hrs} twilight={twl} />
+		<Counter
+			dg1={digit1}
+			dg2={digit2}
+			dg3={digit3}
+			dg4={digit4}
+			dg5={digit5}
+			dg6={digit6}
+		/>
 	);
 }, 1000);
-
 export default Counter;

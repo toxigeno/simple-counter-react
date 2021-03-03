@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "./counter.js";
+import Counter from "./counter";
 
 //create your first component
 export function Home() {
@@ -8,4 +8,4 @@ export function Home() {
 			<Counter />
 		</div>
 	);
-};
+}
